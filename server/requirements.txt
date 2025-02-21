@@ -1,0 +1,5 @@
+django
+gunicorn
+psycopg2-binary
+whitenoise
+channels  # Si usas WebSockets con Django Channels
