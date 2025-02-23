@@ -113,12 +113,12 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'intento5',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Bancolombi@123',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'lPnyrExGwZWqrqFErdEAAvgODoKSIXto',
+        'HOST': 'shinkansen.proxy.rlwy.net',
+        'PORT': '58891',
     }
 }
 
