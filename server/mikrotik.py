@@ -5,9 +5,9 @@ import ssl
 import json
 
 # Configuración MikroTik
-MIKROTIK_IP = '192.168.15.1'  # Cambia esto por la IP de tu MikroTik
+MIKROTIK_IP = '186.96.97.246'  # Cambia esto por la IP de tu MikroTik
 USERNAME = 'admin'  # Cambia esto por tu usuario
-PASSWORD = '3208298184O'  # Cambia esto por tu contraseña
+PASSWORD = '3208298184'  # Cambia esto por tu contraseña
 PORT = 8728  # Puerto API de MikroTik (8728 para HTTP, 8729 para HTTPS)
 
 # Deshabilitar verificación SSL si usas HTTPS

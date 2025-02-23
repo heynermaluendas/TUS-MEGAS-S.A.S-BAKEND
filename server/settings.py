@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-e5y9j46+45q(=k=o^bqg$_nriy0a(xut(@qm%b$^mftdn2_!ok
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['tus-megas-sas-bakend-production.up.railway.app']
+ALLOWED_HOSTS = ['tus-megas-sas-bakend-production.up.railway.app', 'localhost']
 
 
 CHANNEL_LAYERS = {
