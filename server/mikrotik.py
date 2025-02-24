@@ -13,7 +13,7 @@ MIKROTIK_SERVERS = {
     "2": {"ip": "191.97.15.98", "username": "admin", "password": "3208298184O", "prefix": "#2"},
 }
 
-PORT = 8728  # API de MikroTik
+PORT = 8728  
 
 # Configurar SSL (solo necesario si usas HTTPS)
 ssl_context = ssl.create_default_context()
