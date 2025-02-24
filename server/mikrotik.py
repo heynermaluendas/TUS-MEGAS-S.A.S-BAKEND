@@ -8,7 +8,6 @@ from django.views.decorators.csrf import csrf_exempt
 import ssl
 import json
 
-# Configuración de MikroTik
 MIKROTIK_SERVERS = {
      "1": {"ip": "186.96.97.246", "username": "admin", "password": "3208298184", "prefix": "#1"},
     "2": {"ip": "191.97.15.98", "username": "admin", "password": "3208298184O", "prefix": "#2"},
