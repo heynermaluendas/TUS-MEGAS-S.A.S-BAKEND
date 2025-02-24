@@ -15,7 +15,6 @@ MIKROTIK_SERVERS = {
 
 PORT = 8728  
 
-# Configurar SSL (solo necesario si usas HTTPS)
 ssl_context = ssl.create_default_context()
 ssl_context.check_hostname = False
 ssl_context.verify_mode = ssl.CERT_NONE
