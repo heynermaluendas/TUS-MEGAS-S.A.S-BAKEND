@@ -171,6 +171,35 @@ def obtener_contratante(request, n_cuenta):
         "fecha_instalacion": contratante.fecha_instalacion,
     }
     return JsonResponse(data)
+
+
+@csrf_exempt
+def actualizar_mes_actual(request):
+    if request.method == 'POST':
+        try:
+            data = json.loads(request.body)
+            mes_actual_anterior = data.get('mes_actual_anterior', '').strip().lower()
+            mes_actual_nuevo = data.get('mes_actual_nuevo', '').strip().capitalize()
+
+            if not mes_actual_anterior or not mes_actual_nuevo:
+                return JsonResponse({"error": "Debes proporcionar mes_actual_anterior y mes_actual_nuevo"}, status=400)
+
+
+            # Buscar y actualizar ignorando espacios y mayúsculas/minúsculas
+            contratantes_a_actualizar = Contratante.objects.filter(mes_actual__iexact=mes_actual_anterior)
+            
+            if not contratantes_a_actualizar.exists():
+                return JsonResponse({"error": f"No se encontraron contratantes con mes_actual={mes_actual_anterior}"}, status=404)
+
+            cantidad_actualizada = contratantes_a_actualizar.update(mes_actual=mes_actual_nuevo)
+
+            return JsonResponse({"message": f"Se actualizaron {cantidad_actualizada} contratantes de {mes_actual_anterior} a {mes_actual_nuevo}"})
+        
+        except json.JSONDecodeError:
+            return JsonResponse({"error": "Formato JSON inválido"}, status=400)
+    
+    return JsonResponse({"error": "Método no permitido"}, status=405)
+
 @csrf_exempt
 def modificar_contratante(request, nit_o_cc):
     if request.method == 'POST':
